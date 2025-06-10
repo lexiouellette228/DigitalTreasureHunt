@@ -1,0 +1,84 @@
+/* treasure css */ 
+/* Written by Alexis Ouellette */ 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('treasure.png');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#password {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+#openBtn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    cursor: pointer;
+}
+
+/* Popup Modal */
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#popupVideo {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+#errorMessage {
+    color: red;
+    margin-top: 10px;
+}
+
+.file-icon {
+    width: 100px;
+    height: 100px;
+}

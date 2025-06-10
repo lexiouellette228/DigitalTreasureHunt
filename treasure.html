@@ -1,0 +1,35 @@
+<!--HTML for the Treasure Chest webpage-->
+<!--Written by Alexis Ouellette-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Treasure Hunt</title>
+    <link rel="stylesheet" href="treasure.css">
+</head>
+<body>
+    <!--Password button-->
+    <div class="container">
+        <input type="password" id="password" placeholder="Enter the password" aria-label="Enter the password">
+        <button id="openBtn" aria-label="Enter">Enter</button>
+        <p id="errorMessage" aria-label="Incorrect password. Try again!" class="hidden">Incorrect Password. Try Again!</p>
+    </div>
+    
+
+    <!-- Popup Video -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <span id="popupMessage"></span>
+            <video id="popupVideo" class="hidden" controls>
+                <source src="TreasureVid.mp4" type="video/mp4">
+                Your browser does not support the video. 
+            </video>
+            <button id="closePopup">Close</button>
+        </div>
+    </div>
+
+    <script src="treasure.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

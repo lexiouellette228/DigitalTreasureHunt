@@ -1,0 +1,258 @@
+<!--HTML for the files webpage-->
+<!--Written by Alexis Ouellette-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="files.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 header-transparent">Choose Wisely! Some files may contain corrupted data!</h2>
+        <div class="file-container">
+            <!--Calcium file contains the Caesar cipher diagram-->
+            <div class="file" style="top: 10%; left: 20%;">
+                <a href="files/Calcium.pdf" target="_blank">
+                    <img src="images/calcium.png" aria-label="Calcium.pdf" alt="Calcium.pdf" class="file-icon">
+                    <p>Calcium.pdf</p>
+                </a>
+            </div>
+            <!--Sulfur file will 'self-destruct'-->
+            <div class="file" style="top: 20%; left: 40%;">
+                <a href="#" onclick="showSulfurAlert()">
+                    <img src="images/sulfur.png" alt="File 2" aria-label="sulfur.png" class="file-icon">
+                    <p>Sulfur.txt</p>
+                </a>
+            </div>
+            <!--Uranium file will 'self-destruct'-->
+            <div class="file" style="top: 30%; left: 60%;">
+                <a href="#" onclick="showUraniumAlert()">
+                    <img src="images/U.png" alt="File 3" aria-label="Uranium.pdf" class="file-icon">
+                    <p>Uranium.pdf</p>
+                </a>
+            </div>
+            <!--Andrew Carnegie file will 'self-destruct'-->
+            <div class="file" style="top: 50%; left: 60%;">
+                <a href="#" onclick="showACAlert()">
+                    <img src="images/AC.png" alt="File 4" aria-label="Andrew Carnegie.txt" class="file-icon">
+                    <p>AndrewCarnegie.txt</p>
+                </a>
+            </div>
+            <!--Gold file will 'self-destruct'-->
+            <div class="file" style="top: 50%; left: 20%;">
+                <a href="#" onclick="showGoldAlert()">
+                    <img src="images/gold.png" alt="File 5" aria-label="Gold.pdf" class="file-icon">
+                    <p>Gold.pdf</p>
+                </a>
+            </div>
+            <!--Abraham Lincoln file will 'self-destruct'-->
+            <div class="file" style="top: 60%; left: 40%;">
+                <a href="#" onclick="showALAlert()">
+                    <img src="images/AL.png" aria-label="Abraham Lincoln.pdf" alt="File 6" class="file-icon">
+                    <p>AbrahamLincoln.pdf</p>
+                </a>
+            </div>
+            <!--Helium file contains the link to the treasure chest webpage'-->
+            <div class="file" style="top: 70%; left: 60%; position: absolute;">
+                <a href="#" id="helium-link">
+                    <img src="images/He.png" alt="File 7" aria-label="Helium.pdf" class="file-icon">
+                    <p>Helium.pdf</p>
+                </a>
+            </div>
+            <!--Lead file will 'self-destruct'-->
+            <div class="file" style="top: 80%; left: 80%;">
+                <a href="#" onclick="showLeadAlert()">
+                    <img src="images/lead.png" aria-label="lead.png" alt="File 8" class="file-icon">
+                    <p>Lead.txt</p>
+                </a>
+            </div>
+            <!--Cornelius Vanderbilt file will 'self-destruct'-->
+            <div class="file" style="top: 10%; left: 60%;">
+                <a href="#" onclick="showCVAlert()">
+                    <img src="images/CV.png" alt="File 9" aria-label="Cornelius Vanderbilt.pdf" class="file-icon">
+                    <p>CorneliusVanderbilt.pdf</p>
+                </a>
+            </div>
+            <!--Silver file will 'self-destruct'-->
+            <div class="file" style="top: 20%; left: 80%;">
+                <a href="#" onclick="showSilverAlert()">
+                    <img src="images/silver.png" alt="file 10" aria-label="Silver.pdf" class="file-icon">
+                    <p>Silver.pdf</p>
+                </a>
+            </div>
+            <!--Madam JC Walker file will 'self-destruct'-->
+            <div class="file" style="top: 30%; left: 20%;">
+                <a href="#" onclick="showMadamAlert()">
+                    <img src="images/CJ.png" alt="File 11" aria-label="Madam JC Walker.pdf" class="file-icon">
+                    <p>MadamJCWalker.pdf</p>
+                </a>
+            </div>
+            <!--Benajamin Frankling file contains the instructions for the caesar cipher-->
+            <div class="file" style="top: 40%; left: 40%;">
+                <a href="#" id="ben-link">
+                    <img src="images/BenFrank.png" aria-label="Benjamin Franklin.pdf" alt="File 12" class="file-icon">
+                    <p>BenjaminFranklin.pdf</p>
+                </a>
+            </div>    
+            <!--Nikola Tesla file contains the link the second webpage-->        
+            <div class="file" style="top: 40%; left: 80%;">
+                <a href="#" id="tesla-link">
+                    <img src="images/NK.png" aria-label="Nikola Tesla.txt" alt="File 13" class="file-icon">
+                    <p>NikolaTesla.txt</p>
+                </a>
+            </div>
+            <!--Garrett Morgan file will 'self-destruct'-->
+            <div class="file" style="top: 60%; left: 80%;">
+                <a href="#" onclick="showGMAlert()">
+                    <img src="images/GM.png" alt="File 14" aria-label="Garrett Morgan.txt" class="file-icon">
+                    <p>GarrettMorgan.txt</p>
+                </a>
+            </div>
+            <!--Nitrogen file will 'self-destruct'-->
+            <div class="file" style="top: 70%; left: 20%;">
+                <a href="#" onclick="showNitrogenAlert()">
+                    <img src="images/N.png" alt="File 15"  aria-label="Nitrogen.pdf" class="file-icon">
+                    <p>Nitrogen.pdf</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="script.js"></script>
+    <script>
+        // Helium link password
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#helium-link').addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+
+                // Prompt for the password
+                Swal.fire({
+                    title: 'Enter Password',
+                    input: 'password',
+                    inputLabel: 'Password',
+                    inputPlaceholder: 'Enter the password',
+                    inputAttributes: {
+                        maxlength: 20,
+                        autocapitalize: 'off',
+                        autocorrect: 'off'
+                    },
+                    showCancelButton: true,
+                    confirmButtonText: 'Submit'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const password = result.value;
+                        // Check the password
+                        if (password === 'He' || password === 'he') {
+                            Swal.fire({
+                                title: 'Access Granted',
+                                text: 'Redirecting to the treasure page...',
+                                icon: 'success',
+                                timer: 2000,
+                                showConfirmButton: false
+                            }).then(() => {
+                                window.location.href = 'treasure.html'; // Navigate to the treasure.html page
+                            });
+                        } else {
+                            Swal.fire({
+                                title: 'Access Denied',
+                                text: 'Incorrect password!',
+                                icon: 'error',
+                                confirmButtonText: 'Try Again'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+
+    //Benajamin Franklin password 
+    document.querySelector('#ben-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    Swal.fire({
+        //prompt the password
+        title: 'Enter Password',
+        input: 'password',
+        inputLabel: 'Password',
+        inputPlaceholder: 'Enter the password',
+        inputAttributes: {
+            maxlength: 20,
+            autocapitalize: 'off',
+            autocorrect: 'off'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Submit'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const password = result.value;
+            // Check the password
+            if (password === 'bifocals') { // Password for file
+                window.open('files/BenjaminFranklin.pdf', '_blank'); // Open the BenjaminFranklin.pdf file in a new tab
+            } else {
+                Swal.fire({
+                    title: 'Access Denied',
+                    text: 'Incorrect password!',
+                    icon: 'error',
+                    confirmButtonText: 'Try Again'
+                });
+            }
+        }
+    });
+});
+
+
+        // Nikola Tesla link password prompt
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#tesla-link').addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+
+                // Prompt for the password
+                Swal.fire({
+                    title: 'Enter Password',
+                    input: 'password',
+                    inputLabel: 'Password',
+                    inputPlaceholder: 'Enter the password',
+                    inputAttributes: {
+                        maxlength: 20,
+                        autocapitalize: 'off',
+                        autocorrect: 'off'
+                    },
+                    showCancelButton: true,
+                    confirmButtonText: 'Submit'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const password = result.value;
+                        // Check the password
+                        if (password === 'radio') {
+                            Swal.fire({
+                                title: 'Access Granted',
+                                text: 'Redirecting to the login page...',
+                                icon: 'success',
+                                timer: 2000,
+                                showConfirmButton: false
+                            }).then(() => {
+                                window.open('WebPage2/login2.html', '_blank'); // Navigate to the login2.html page
+                            });
+                        } else {
+                            Swal.fire({
+                                title: 'Access Denied',
+                                text: 'Incorrect password!',
+                                icon: 'error',
+                                confirmButtonText: 'Try Again'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

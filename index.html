@@ -1,196 +1,36 @@
-<!--Treasure map html, css, and javascript-->
+<!--Login page for the website 1 -->
 <!--Written by Alexis Ouellette-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Treasure Map</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--CSS-->
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        #map {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            background: url('treasureMap2.png') no-repeat center center;
-            background-size: cover;
-        }
-        .icon {
-            position: absolute;
-            cursor: pointer;
-        }
-        #balloons {
-            width: 8vw;
-            bottom: 19vh;
-            right: 28vw;
-        }
-        #kite {
-            width: 15vw;
-            top: 40vh;
-            left: 5vw;
-        }
-        #globe {
-            width: 15vw;
-            top: 4vh;
-            left: 40vw;
-        }
-        #cipher {
-            width: 14vw;
-            top: 27vh;
-            left: 40vw;
-        }
-        #keypad1 {
-            width: 12vw;
-            top: 17vh;
-            left: 28vw;
-        }
-        #light {
-            width: 20vw;
-            top: 26vh;
-            left: 13vw;
-        }
-        #calcium {
-            width: 18vw;
-            top: 49vh;
-            left: 23vw;
-        }
-        #tesla {
-            width: 17vw;
-            top: 23vh;
-            right: 30vw;
-        }
-        #radio {
-            width: 15vw;
-            top: 14vh;
-            left: 49vw;
-        }
-        #JC {
-            width: 9vw;
-            top: 45vh;
-            right: 38vw;
-        }
-        #bifocals {
-            width: 15vw;
-            top: 42vh;
-            left: 25vw;
-        }
-        #keypad2 {
-            width: 14vw;
-            top: 33vh;
-            right: 16vw;
-        }
-        #declaration {
-            width: 15vw;
-            top: 22vh;
-            left: 32vw;
-        }
-        #file {
-            width: 6vw;
-            top: 40vh;
-            left: 20vw;
-        }
-
- 
-    </style>
+    <title>Find the Files</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
-    <!--Icons-->
-    <div id="map">
-        <img id="balloons" class="icon" src="icons/ballons.png" aria-label="ballons" alt="Balloons">
-        <img id="globe" class="icon" src="icons/globe.png" aria-label="globe" alt="Globe">
-        <img id="cipher" class="icon" src="icons/cipher.png" aria-label="cipher" alt="Cipher">
-        <img id="keypad1" class="icon" src="icons/keypad1.png" aria-label="keypad1" alt="Keypad1">
-        <img id="light" class="icon" src="icons/light.png" aria-label="light bulb" alt="Light">
-        <img id="calcium" class="icon" src="icons/calcium.png" aria-label="calcium carbonate" alt="Calcium">
-        <img id="tesla" class="icon" src="icons/tesla.png" aria-label="Tesla" alt="Tesla">
-        <img id="radio" class="icon" src="icons/radio.png" aria-label="radio" alt="Radio">
-        <img id="JC" class="icon" src="icons/JC.png" aria-label="Julius Caesar" alt="Julius Caesar">
-        <img id="bifocals" class="icon" src="icons/bifocals.png" aria-label="bifocals" alt="Bifocals">
-        <img id="keypad2" class="icon" src="icons/keypad2.png" aria-label="keypad2" alt="Keypad2">
-        <img id="declaration" class="icon" src="icons/declaration.png" aria-label="Declaration of Independence" alt="Declaration">
-        <img id="file" class="icon" src="icons/file.png" aria-label="file folder" alt="File">
+    <div class="container h-100 d-flex justify-content-center align-items-center">
+        <div class="card p-4" style="width: 350px; background: rgba(255, 255, 255, 0.9); border-radius: 10px;">
+            <h2 class="text-center mb-4">Login</h2>
+            <h7 class="text-center mb-4">The username is case and symbol sensitive. Enter in the username excatly as the placeholder.</h7>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">username</label>
+                    <input type="text" class="form-control" id="username" aria-label="username first_last" placeholder="first_last" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" aria-label="Enter password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" aria-label="submit" class="btn btn-dark btn-block">Login</button>
+            </form>
+        </div>
     </div>
-
-    <!-- Bootstrap link-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <!-- jQuery link-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- SweetAlert2 link-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <!--JavaScript-->
-    <script>
-        $(document).ready(function() {
-            $('#balloons').click(function() {
-                Swal.fire('You have gathered the wisdom of the elements. The lightest of them all, the ballons will grant you passage.', 'Return to the files.html webpage and find the file that matches this hint. The password is the SYMBOL for the element.', 'info');
-            });
-
-            $('#kite').click(function() {
-                Swal.fire('I used a kite and a key to work with electricity..', 'Find the file of the person who is known for this..', 'info');
-            });
-
-            $('#globe').click(function() {
-                Swal.fire({
-                    title: 'Access Granted',
-                    text: 'Redirecting to the first webpage...',
-                    icon: 'success',
-                    timer: 2000,
-                    showConfirmButton: false
-                }).then(() => {
-                    window.open('WebPage1/index.html', '_blank'); 
-                });
-            });
-
-            $('#cipher').click(function() {
-                Swal.fire('fubswr lv ixq', 'Use the Caesar Cipher to decrypt the password. It will be used as the password once you have the second webpage opened.', 'warning');
-            });
-
-            $('#keypad1').click(function() {
-                Swal.fire('What year was the Declaration of Independence signed?', 'Enter the year the Declaration of Independence was signed into the keypad, the numbers on the LCD screen will grant you access to the first webpage..', 'info');
-            });
-
-            $('#light').click(function() {
-                Swal.fire('I invented the incandescent electric light bulb in 1879.', 'The person who invented this device will grant you access to the first webpage...', 'info');
-            });
-
-            $('#calcium').click(function() {
-                Swal.fire('The file you need is an element that can be found in milk and bones.','It is also a part of this chemical formula..', 'info');
-            });
-
-            $('#tesla').click(function() {
-                Swal.fire('The file you need is name of the man the automobile company that only produces electric cars is named after', 'Hint: Cyber Truck is their newest model', 'info');
-            });
-
-            $('#radio').click(function() {
-                Swal.fire('The password you are looking for can be heard using this device', 'It will unlock the file of the man who invented it.', 'warning');
-            });
-
-            $('#JC').click(function() {
-                Swal.fire('I invented the Caesar Cipher to send secret messages to the generals in the field around 100 BC', 'My name will be the username for the second webpage you unlocked.', 'warning');
-            });
-
-            $('#bifocals').click(function() {
-                Swal.fire('The password for the man who invented these can be seen using these..', 'Hint: The name of the file you need is the only man printed on American currency who wasn\'t a president.', 'info');
-            });
-
-            $('#keypad2').click(function() {
-                Swal.fire('Enter the code you were given from solving the math problem correctly into the keypad.', 'The LCD screen will display the password you will need to unlock the treasure chest.', 'info');
-            });
-
-            $('#declaration').click(function() {
-                Swal.fire('What year was the Declaration of Independence signed?', 'Enter the year the Declaration of Independence was signed into the keypad, the numbers on the LCD screen will grant you access to the first webpage..', 'info');
-            });
-            $('#file').click(function() {
-                Swal.fire('There are 4 files you will need to open.. each file will guide you to the treasure.', 'Some files are password protected.. use the hints given on the map to unlock them.', 'info');
-            });
-        });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
