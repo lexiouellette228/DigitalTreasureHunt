@@ -1,0 +1,128 @@
+<!--HTML, CSS, and JavaScript for the  math probelm webpage-->
+<!--Written by Alexis Ouellette-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Problem</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <style>
+        /* CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('math.png');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 500px; 
+        }
+        .form-group label {
+            font-size: 14px; 
+        }
+        .form-control {
+            width: 50%;
+            font-size: 14px; 
+            margin: 0 auto; 
+        }
+        .math-problem {
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .problem-box {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .btn {
+            font-size: 14px; 
+            padding: 5px 10px; 
+        }
+        .card {
+            background-color: rgba(0, 0, 0, 0.652); /* Transparentish background */
+            color: white;
+            text-align: center;
+        }
+        .self-destruct-message {
+            background-color: rgba(0, 0, 0, 0.919); /* Transparentish background */
+            color: white; 
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="card p-3">
+            <h2 class="card-title">Select Grade Level</h2>
+            <div class="form-group">
+                <label for="gradeLevel">Grade Level:</label>
+                <select class="form-control" id="gradeLevel">
+                    <option value="" aria-label="Select Grade">Select Grade</option>
+                    <option value="grade1" aria-label="Middle School">Middle School</option>
+                    <option value="grade2" aria-label="High School">High School</option>
+                </select>
+            </div>
+            <div class="math-problem hidden" id="mathProblem">
+                <div id="problemText" class="problem-box"></div>
+                <input type="text" class="form-control" id="answer" aria-label="Enter your name" placeholder="Enter your answer">
+                <button class="btn btn-primary mt-2" aria-label="Submit" onclick="checkAnswer()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <!--JavaScript-->
+    <script>
+        const problems = {
+            grade1: { problem: "A rectangular computer screen display for a new cybersecurity dashboard has a length that is 2 units longer than its width. The perimeter of the computer screen is 28 units. Find the width and length of the computer screen. Calculate the area of the computer screen.", answer: 48 },
+            grade2: { problem: "A rectangular computer screen display for a new cybersecurity dashboard has a length that is 4 units longer than its width. The perimeter of the computer screen is 36 units. Find the width and length of the computer screen. Calculate the area of the computer screen.", answer: 77 }
+        };
+
+        function checkAnswer() {
+            const grade = document.getElementById('gradeLevel').value;
+            const userAnswer = parseInt(document.getElementById('answer').value);
+            if (userAnswer === problems[grade].answer) {
+                Swal.fire({
+                    title: 'Correct!',
+                    //password to enter into the keypad
+                    text: 'Your code is: 123',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    document.getElementById('content').innerHTML = '<div class="self-destruct-message"><h2>This file has self-destructed.</h2></div>';
+                });
+            } else {
+                Swal.fire({
+                    title: 'Incorrect',
+                    text: 'Please try again.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('gradeLevel').addEventListener('change', function() {
+                const grade = this.value;
+                if (grade) {
+                    document.getElementById('mathProblem').classList.remove('hidden');
+                    document.getElementById('problemText').innerText = problems[grade].problem;
+                } else {
+                    document.getElementById('mathProblem').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

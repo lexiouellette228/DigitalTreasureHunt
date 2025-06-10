@@ -1,0 +1,39 @@
+/*CSS for login to 2nd webpage */
+/* Written by Alexis Ouellette */ 
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: url('mathLogin.png') no-repeat center center fixed; 
+    background-size: cover;
+}
+
+.card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Login message */
+.login-message-card {
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 10px;
+    padding: 15px;
+    width: 350px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.login-message-card h2 {
+    font-size: 18px; 
+}
+.login-message-card p {
+    font-size: 14px; 
+    color: red;
+}
